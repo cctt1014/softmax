@@ -1,0 +1,25 @@
+#!/bin/bash
+# LIB_NAME=./skywater-pdk/libraries/sky130_fd_sc_hs/latest/timing/sky130_fd_sc_hs__ff_100C_1v95.lib
+# LIB_NAME=./skywater-pdk/libraries/sky130_fd_sc_hd/latest/timing/sky130_fd_sc_hd__ff_100C_1v65.lib
+# LIB_NAME=./skywater-pdk/libraries/sky130_fd_sc_hdll/latest/timing/sky130_fd_sc_hdll__ff_100C_1v65.lib
+# LIB_NAME=./skywater-pdk/libraries/sky130_fd_sc_hvl/latest/timing/sky130_fd_sc_hvl__ff_085C_5v50_lv1v95.lib
+# LIB_NAME=./skywater-pdk/libraries/sky130_fd_sc_lp/latest/timing/sky130_fd_sc_lp__ff_100C_1v95.lib
+# LIB_NAME=./skywater-pdk/libraries/sky130_fd_sc_ls/latest/timing/sky130_fd_sc_ls__ff_085C_1v95.lib
+# LIB_NAME=./skywater-pdk/libraries/sky130_fd_sc_ms/latest/timing/sky130_fd_sc_ms__ff_100C_1v65.lib
+LIB_NAME=./lib/sky130_fd_sc_hvl__tt_100C_3v30.lib
+# LIB_NAME=./lib/sky130_fd_sc_hs__tt_100C_1v80.lib
+
+yosys -l ./syn/synth_softmax.log -p "
+# elab
+read_verilog ./src/*.v;
+hierarchy -check -top softmax;
+proc; opt;
+fsm;  opt;
+memory; opt;
+techmap; opt;
+dfflibmap -liberty $LIB_NAME;
+abc -liberty $LIB_NAME;
+clean;
+write_verilog -noattr ./syn/synth_softmax.yv
+"
+

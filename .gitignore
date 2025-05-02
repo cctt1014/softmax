@@ -1,0 +1,10 @@
+.vscode/
+build
+*.vcd
+skywater-pdk
+obj_dir
+logs
+sta
+*.log
+*.yv
+*.lib

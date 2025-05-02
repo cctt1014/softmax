@@ -1,0 +1,26 @@
+ #!/bin/bash
+LIB_NAME=./lib/sky130_fd_sc_hs__tt_100C_1v80.lib
+
+yosys -l check_core.log -p "
+
+    # gold design
+    read_verilog ./src/*.v
+    prep -flatten -top softmax
+    design -stash gold
+    
+    # gate design
+    read_verilog synth_softmax.yv
+    read_liberty  -ignore_miss_func $LIB_NAME
+    prep -flatten -top softmax
+    design -stash gate
+    
+
+    # prove equivalence
+    design -copy-from gold -as gold softmax
+    design -copy-from gate -as gate softmax
+    equiv_make gold gate equiv
+    hierarchy -top equiv
+    #show -pause
+    equiv_simple  -v
+    equiv_status -assert
+"
