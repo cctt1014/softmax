@@ -3,7 +3,5 @@ build
 *.vcd
 skywater-pdk
 obj_dir
-logs
-*.log
 *.yv
 *.lib

@@ -1,0 +1,36 @@
+-- VERILATE dtom_softmax ----------------
+verilator --version
+Verilator 4.218 2022-01-17 rev v4.218
+verilator --cc --exe -Wall -Wno-CASEINCOMPLETE -Wno-UNUSED -Wno-WIDTH -Wno-STMTDLY -Wno-REDEFMACRO --trace --trace-structs --assert --build  -j `nproc` -I./src --top dtom_softmax ./src/adder.v ./src/softmax.v ./src/dtom_divider.v ./src/divider.v ./src/exponential.v ./src/radix2_softmax.v ./src/dtom_softmax.v ./src/shifter.v ./src/decoder.v ./src/multiplier.v ./sim/main_dtom_softmax.cpp
+make[1]: Entering directory '/home/neis-lab/workspace/softmax/obj_dir'
+ccache g++  -I. -Wall -Wextra -Wfloat-conversion -Wlogical-op -Werror -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow      -std=gnu++14 -Os -c -o main_dtom_softmax.o ../sim/main_dtom_softmax.cpp
+/usr/bin/perl /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vdtom_softmax.cpp Vdtom_softmax___024root__DepSet_h434f4e8f__0.cpp Vdtom_softmax__Trace__0.cpp Vdtom_softmax__ConstPool_0.cpp Vdtom_softmax___024root__Slow.cpp Vdtom_softmax___024root__DepSet_h434f4e8f__0__Slow.cpp Vdtom_softmax__Syms.cpp Vdtom_softmax__Trace__0__Slow.cpp > Vdtom_softmax__ALL.cpp
+echo "" > Vdtom_softmax__ALL.verilator_deplist.tmp
+ccache g++  -I. -Wall -Wextra -Wfloat-conversion -Wlogical-op -Werror -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow      -std=gnu++14 -Os -c -o Vdtom_softmax__ALL.o Vdtom_softmax__ALL.cpp
+Archive ar -rcs Vdtom_softmax__ALL.a Vdtom_softmax__ALL.o
+g++    main_dtom_softmax.o verilated.o verilated_vcd_c.o Vdtom_softmax__ALL.a      -o Vdtom_softmax
+rm Vdtom_softmax__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/neis-lab/workspace/softmax/obj_dir'
+
+-- RUN ---------------------
+obj_dir/Vdtom_softmax
+Hex Output: 3e800000
+Decimal Output: 0.250000
+Golden Output: 0.250000
+
+Hex Output: 3e800000
+Decimal Output: 0.250000
+Golden Output: 0.250000
+
+Hex Output: 3e800000
+Decimal Output: 0.250000
+Golden Output: 0.250000
+
+Hex Output: 3e800000
+Decimal Output: 0.250000
+Golden Output: 0.250000
+
+Total Cycles: 106
+
+
+-- DONE --------------------
