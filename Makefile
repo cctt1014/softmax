@@ -23,8 +23,9 @@ endif
 # Set up variables
 
 GENHTML = genhtml
-TOP_NAME = softmax
+TOP_NAME ?= softmax
 SRC_DIR = ./src
+SIM_DIR = ./sim
 # SRC_FILE := $(shell find $(SRC_DIR) -name '*.vh') $(shell find $(SRC_DIR) -name '*.svh') $(shell find $(SRC_DIR) -name '*.v') $(shell find $(SRC_DIR) -name '*.sv')
 SRC_FILE := $(shell find $(SRC_DIR) -name '*.v')
 
@@ -67,14 +68,15 @@ VERILATOR_FLAGS += -j `nproc`
 VERILATOR_FLAGS += -I$(SRC_DIR)
 VERILATOR_FLAGS += --top $(TOP_NAME)
 
+TB_FILE = $(SIM_DIR)/main_$(TOP_NAME).cpp
 
 ######################################################################
 # Build the model
 
 obj_dir/V$(TOP_NAME): src/* $(SRC_FILE)
-	@echo "-- VERILATE ----------------"
+	@echo "-- VERILATE ${TOP_NAME} ----------------"
 	$(VERILATOR) --version
-	$(VERILATOR) $(VERILATOR_FLAGS) $(SRC_FILE) sim_main.cpp
+	$(VERILATOR) $(VERILATOR_FLAGS) $(SRC_FILE) ${TB_FILE}
 
 ######################################################################
 # Run verilator

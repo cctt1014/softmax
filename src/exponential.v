@@ -7,11 +7,10 @@ module exponential #(
 ) (
     input 	wire 			           	Clock,
     input 	wire           				Reset,
-    input   wire                        Str,
-    input	wire    [BITWIDTH-1:0] 	Datain,
+    input   wire                        Start,
+    input	wire    [BITWIDTH-1:0] 	    Datain,
     output reg                          Ack,
-    output reg      [BITWIDTH-1:0]	    DataOut
-	
+    output reg      [BITWIDTH-1:0]	    DataOut	
 );
 
 wire [BITWIDTH-1:0] one, oversix, half;
@@ -34,9 +33,9 @@ assign half = 32'h3f000000;
 adder A1 (        
     one,
     T0,
-    Str,
-    Str,
-    Str,
+    Start,
+    Start,
+    Start,
     Clock,
     Reset,
     T1,
@@ -136,7 +135,7 @@ always @(posedge Clock) begin
         Ack <= 0;
         Count <= 0;
 	end else begin
-        if (Str) begin
+        if (Start) begin
     		T0 <= Datain;
             DataOut <= To;
             if (Count == 140)

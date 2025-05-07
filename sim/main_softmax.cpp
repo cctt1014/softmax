@@ -7,6 +7,9 @@
 
 // For std::unique_ptr
 #include <memory>
+#include <stdio.h>
+#include <stdint.h>
+
 #include <verilated_vcd_c.h>
 
 // Include common routines
@@ -15,8 +18,11 @@
 // Include model header, generated from Verilating "top.v"
 #include "Vsoftmax.h"
 
+#include "utils.h"
+
 // Legacy function required only so linking works on Cygwin and MSVC++
 double sc_time_stamp() { return 0; }
+
 
 int main(int argc, char** argv) {
     // Create logs/ directory in case we have traces to put under it
@@ -26,6 +32,11 @@ int main(int argc, char** argv) {
     // Multiple modules (made later below with Vtop) may share the same
     // context to share time, or modules may have different contexts if
     // they should be independent from each other.
+
+    // Input Data
+    std::vector<float> input_data = {1.0, 1.0, 1.0, 1.0};
+    std::vector<float> golden_data = calculateSoftmax(input_data);
+    int input_size = input_data.size();
 
     // Using unique_ptr is similar to
     // "VerilatedContext* contextp = new VerilatedContext" then deleting at end.
@@ -65,8 +76,10 @@ int main(int argc, char** argv) {
     top->Datain = 0;
     top->N = 3;
 
+    int output_counter = -1;
+
     // Simulate until $finish
-    while (contextp->time() < 100) {
+    while (contextp->time() < 4000) {
         // Historical note, before Verilator 4.200 Verilated::gotFinish()
         // was used above in place of contextp->gotFinish().
         // Most of the contextp-> calls can use Verilated:: calls instead;
@@ -83,35 +96,48 @@ int main(int argc, char** argv) {
         // Toggle a fast (time/2 period) clock
         top->Clock = !top->Clock;
 
-        // Toggle control signals on an edge that doesn't correspond
-        // to where the controls are sampled; in this example we do
-        // this only on a negedge of Clock, because we know
-        // reset is not sampled there.
+        // Drive inputs at negedge of clock
         if (!top->Clock) {
             if (contextp->time() > 1 && contextp->time() < 10) {
                 top->Reset = 1;  // Assert reset
             } else {
                 top->Reset = 0;  // Deassert reset
-                
             }
 
             if (contextp->time() == 10) {
                 top->Start = 1;  // Assert start
-                top->Datain = 0x3f800000;
-            } else if (contextp->time() == 15) {
-                top->Datain = 0x3f800000;
-            } else if (contextp->time() == 20) {
-                top->Datain = 0x3f800000;
-            } else if (contextp->time() == 30) {
-                top->Start = 0;  // Assert start
+                top->Datain = 0;
+            }
+
+            for (int i = 0; i < input_size; i++) {
+                if (contextp->time() == 12 + i*2) {
+                    top->Datain = floatToIEEE754(input_data[i]);
+                }
+            }
+
+            if (contextp->time() == 12 + input_size*2) {
+                top->Start = 0; // Deassert start
             }
         }
+
         // Evaluate model
         // (If you have multiple models being simulated in the same
         // timestep then instead of eval(), call eval_step() on each, then
         // eval_end_step() on each. See the manual.)
         top->eval();
         m_trace->dump(contextp->time());
+
+        // Capture outputs at posedge of clock
+        if (top->Clock) {
+            if (top->Dataout_vld == 1) {
+                if (output_counter >= 0) {
+                    VL_PRINTF("Hex Output: %08x\n", top->Dataout);
+                    VL_PRINTF("Decimal Output: %f\n", IEEE754ToFloat(top->Dataout));
+                    VL_PRINTF("Golden Output: %f\n\n", golden_data[output_counter]);
+                }
+                output_counter++;
+            }
+        }
 
         // Read outputs
         // VL_PRINTF("[%" PRId64 "] Clock=%x rstl=%x iquad=%" PRIx64 " -> oquad=%" PRIx64
@@ -123,8 +149,6 @@ int main(int argc, char** argv) {
 
     // Final model cleanup
     top->final();
-
-
 
     // Final simulation summary
     // contextp->statsPrintSummary();

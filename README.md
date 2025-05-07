@@ -1,4 +1,7 @@
 
 # Packages in use
-Yosys 0.9
-OpenSTA
+1. Yosys 0.9
+2. OpenSTA
+
+# References
+[1] 

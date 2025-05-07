@@ -6,7 +6,7 @@
 `define DIV				3'b100
 `define OUTPUTSTREAM    3'b101
 
-module softmax # (
+module radix2_softmax # (
 	parameter BITWIDTH = 32,
 	parameter INPUTMAX = 2
 )(
@@ -34,7 +34,7 @@ reg  [2**INPUTMAX-1:0] EXP_Start;
 wire [BITWIDTH-1:0] 	InputBuffer_w[2**INPUTMAX -1 :0];
 wire [BITWIDTH-1:0] 	OutputBuffer_w[2**INPUTMAX -1 :0];
 
-wire 					[3:0]Ack;
+wire 					[2**INPUTMAX-1:0] EXP_out_vld;
 reg 					Str_Add_a;
 reg 					Str_Add_b;
 reg 					Str_Add_z;
@@ -59,12 +59,12 @@ assign Dataout_vld = (NextState == `OUTPUTSTREAM) ? 1 : 0;
 genvar i;
 generate
 for (i = 0; i < 2**INPUTMAX; i++) begin
-	exponential exp (
+	shifter shifter_u (
 		Clock,
 		Reset,
 		EXP_Start[i],
 		InputBuffer[i],
-		Ack[i],
+		EXP_out_vld[i],
 		InputBuffer_w[i]
 	);
 end
@@ -145,7 +145,7 @@ always @(posedge Clock) begin
 			end
 
 			`EXP: begin
-				if(Ack == 4'b1111) begin     	       			
+				if(EXP_out_vld == 4'b1111) begin     	       			
 		     		NextState <= `ADD;
 		     		Str_Add_a <= 1 ;
 		      		Str_Add_b <= 1 ;
@@ -223,7 +223,7 @@ for (m = 0; m < 2**INPUTMAX; m++) begin
 					end
 				end
 				`EXP: begin
-					if(Ack == 4'b1111) begin 
+					if(EXP_out_vld == 4'b1111) begin 
 						DivBuffer[m] <= InputBuffer_w[m];
 					end
 				end

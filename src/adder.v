@@ -5,13 +5,13 @@
 module adder(
         input_a,
         input_b,
-        input_a_stb,
-        input_b_stb,
+        input_a_strb,
+        input_b_strb,
         output_z_ack,
         clk,
         rst,
         output_z,
-        output_z_stb,
+        output_z_strb,
         input_a_ack,
         input_b_ack);
 
@@ -19,15 +19,15 @@ module adder(
   input     rst;
 
   input     [31:0] input_a;
-  input     input_a_stb;
+  input     input_a_strb;
   output    input_a_ack;
 
   input     [31:0] input_b;
-  input     input_b_stb;
+  input     input_b_strb;
   output    input_b_ack;
 
   output reg    [31:0] output_z;
-  output    output_z_stb;
+  output    output_z_strb;
   input     output_z_ack;
 
   reg       s_output_z_stb;
@@ -82,7 +82,7 @@ module adder(
       get_a:
       begin
         s_input_a_ack <= 1;
-        if (s_input_a_ack && input_a_stb) begin
+        if (s_input_a_ack && input_a_strb) begin
           a <= input_a;
           s_input_a_ack <= 0;
           state <= get_b;
@@ -92,7 +92,7 @@ module adder(
       get_b:
       begin
         s_input_b_ack <= 1;
-        if (s_input_b_ack && input_b_stb) begin
+        if (s_input_b_ack && input_b_strb) begin
           b <= input_b;
           s_input_b_ack <= 0;
           state <= unpack;
@@ -293,7 +293,7 @@ end
   end
   assign input_a_ack = s_input_a_ack;
   assign input_b_ack = s_input_b_ack;
-  assign output_z_stb = s_output_z_stb;
+  assign output_z_strb = s_output_z_stb;
   // assign output_z = output_z;
 
 endmodule
