@@ -8,14 +8,15 @@ module shifter #(
     input 	wire 			           	Clock,
     input 	wire           				Reset,
     input   wire                        Start,
-    input	wire    [BITWIDTH-1:0] 	    Datain,
+    input	wire    [BITWIDTH-1:0] 	    Datain, // u_int32
     output reg                          DataOut_vld,
     output reg      [BITWIDTH-1:0]	    DataOut	
 );
 
 wire [BITWIDTH-1:0] result;
 
-assign result = 1 << Datain;
+// Shift and convert from integer to IEEE 754 floating point format
+assign result = {1'b0, 8'h7f + Datain, 23'h000000};
 
 always @(posedge Clock) begin 
 	if (Reset) begin

@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     // they should be independent from each other.
 
     // Input Data
-    std::vector<float> input_data = {1.0, 1.0, 1.0, 1.0};
+    std::vector<float> input_data = {2.0, 2.0, 2.0, 2.0};
     std::vector<float> golden_data = calculateSoftmax(input_data);
     int input_size = input_data.size();
 
@@ -136,8 +136,13 @@ int main(int argc, char** argv) {
                     VL_PRINTF("Golden Output: %f\n\n", golden_data[output_counter]);
                 }
                 output_counter++;
+                if (output_counter == input_size) {
+                    VL_PRINTF("Total Cycles: %ld\n\n", (contextp->time()/2) - 5);
+                }
             }
         }
+
+        
 
         // Read outputs
         // VL_PRINTF("[%" PRId64 "] Clock=%x rstl=%x iquad=%" PRIx64 " -> oquad=%" PRIx64

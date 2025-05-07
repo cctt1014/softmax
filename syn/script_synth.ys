@@ -12,7 +12,7 @@ LIB_NAME=./lib/sky130_fd_sc_hvl__tt_100C_3v30.lib
 yosys -l ./syn/synth_softmax.log -p "
 # elab
 read_verilog ./src/*.v;
-hierarchy -check -top softmax;
+hierarchy -check -top dtom_softmax;
 proc; opt;
 fsm;  opt;
 memory; opt;

@@ -136,6 +136,9 @@ int main(int argc, char** argv) {
                     VL_PRINTF("Golden Output: %f\n\n", golden_data[output_counter]);
                 }
                 output_counter++;
+                if (output_counter == input_size) {
+                    VL_PRINTF("Total Cycles: %ld\n\n", (contextp->time()/2) - 5);
+                }
             }
         }
 

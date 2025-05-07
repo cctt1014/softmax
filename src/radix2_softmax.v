@@ -28,6 +28,8 @@ reg [BITWIDTH-1:0]	Acc;
 reg [BITWIDTH-1:0]	Arg;
 
 wire [BITWIDTH-1:0]	Acc_w;
+wire [BITWIDTH-1:0] Acc_shifted;
+wire [BITWIDTH-1:0] Acc_float;
 
 reg  [2**INPUTMAX-1:0] EXP_Start;
 
@@ -173,18 +175,20 @@ always @(posedge Clock) begin
 		      		Str_Add_b <= 1 ;
 		     		Str_Add_z <= 1 ;
 
-					NextState <= `DIV;    		 	
+					NextState <= `DIV;
     			end 
 			end
 
 			`DIV: begin
     			Ack_div1 <= 1;
     			Ack_div2 <= 1;
-    			Ack_div3 <= 1;
+    			Ack_div3 <= 0;
 				if (div_z_strb == 4'b1111) begin
 					NextState <= `OUTPUTSTREAM;
+					Ack_div3  <= 1;
 				end else begin
 					NextState <= `DIV;
+					Ack_div3 <= 0;
 				end
 			end
 

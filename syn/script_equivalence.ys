@@ -9,7 +9,7 @@ yosys -l check_core.log -p "
     design -stash gold
     
     # gate design
-    read_verilog synth_softmax.yv
+    read_verilog ./syn/synth_softmax.yv
     read_liberty  -ignore_miss_func $LIB_NAME
     prep -flatten -top softmax
     design -stash gate

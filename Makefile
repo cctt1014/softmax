@@ -86,8 +86,6 @@ default: run
 run: obj_dir/V$(TOP_NAME)
 	@echo
 	@echo "-- RUN ---------------------"
-	@rm -rf logs
-	@mkdir -p logs
 	obj_dir/V$(TOP_NAME)
 	@echo
 	@echo "-- DONE --------------------"
@@ -106,4 +104,4 @@ genhtml:
 
 maintainer-copy::
 clean mostlyclean distclean maintainer-clean::
-	-rm -rf obj_dir logs *.log *.dmp *.vpd core
+	-rm -rf obj_dir *.dmp *.vpd core
