@@ -1,0 +1,85 @@
+Startpoint: _3273_/Dm/_8901_ (rising edge-triggered flip-flop clocked by Clock)
+Endpoint: _3273_/Dm/_9044_ (rising edge-triggered flip-flop clocked by Clock)
+Path Group: Clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock Clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _3273_/Dm/_8901_/CLK (sky130_fd_sc_hvl__dfxtp_1)
+   1.85    1.85 v _3273_/Dm/_8901_/Q (sky130_fd_sc_hvl__dfxtp_1)
+   0.38    2.23 ^ _3273_/Dm/_5528_/Y (sky130_fd_sc_hvl__nand2_1)
+   0.34    2.58 v _3273_/Dm/_5531_/X (sky130_fd_sc_hvl__xor2_1)
+   0.53    3.11 v _3273_/Dm/_5532_/X (sky130_fd_sc_hvl__and3_1)
+   0.42    3.53 v _3273_/Dm/_5617_/X (sky130_fd_sc_hvl__o21a_1)
+   0.63    4.15 v _3273_/Dm/_5619_/X (sky130_fd_sc_hvl__or2_1)
+   0.38    4.54 v _3273_/Dm/_5628_/X (sky130_fd_sc_hvl__xor2_1)
+   0.33    4.87 v _3273_/Dm/_5629_/X (sky130_fd_sc_hvl__o21a_1)
+   0.63    5.49 v _3273_/Dm/_5631_/X (sky130_fd_sc_hvl__or2_1)
+   0.38    5.88 v _3273_/Dm/_5646_/X (sky130_fd_sc_hvl__xor2_1)
+   0.33    6.21 v _3273_/Dm/_5647_/X (sky130_fd_sc_hvl__o21a_1)
+   0.63    6.83 v _3273_/Dm/_5649_/X (sky130_fd_sc_hvl__or2_1)
+   0.38    7.22 v _3273_/Dm/_5676_/X (sky130_fd_sc_hvl__xor2_1)
+   0.31    7.53 v _3273_/Dm/_5677_/X (sky130_fd_sc_hvl__o21a_1)
+   0.62    8.15 v _3273_/Dm/_5679_/X (sky130_fd_sc_hvl__or2_1)
+   0.35    8.50 v _3273_/Dm/_5688_/X (sky130_fd_sc_hvl__xor2_1)
+   0.82    9.33 v _3273_/Dm/_5690_/X (sky130_fd_sc_hvl__or3_1)
+   0.18    9.51 ^ _3273_/Dm/_5691_/Y (sky130_fd_sc_hvl__nand2_1)
+   0.41    9.92 ^ _3273_/Dm/_5693_/X (sky130_fd_sc_hvl__xor2_1)
+   0.40   10.32 ^ _3273_/Dm/_5695_/X (sky130_fd_sc_hvl__xor2_1)
+   0.43   10.75 ^ _3273_/Dm/_5697_/X (sky130_fd_sc_hvl__xor2_1)
+   0.35   11.10 v _3273_/Dm/_5700_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.39   11.48 ^ _3273_/Dm/_5799_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.37   11.85 v _3273_/Dm/_6005_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.40   12.25 ^ _3273_/Dm/_6008_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.37   12.62 v _3273_/Dm/_6230_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.40   13.02 ^ _3273_/Dm/_6233_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.37   13.39 v _3273_/Dm/_6477_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.40   13.78 ^ _3273_/Dm/_6480_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.41   14.19 v _3273_/Dm/_6615_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.87   15.06 v _3273_/Dm/_6875_/X (sky130_fd_sc_hvl__or3_1)
+   0.35   15.41 v _3273_/Dm/_7119_/X (sky130_fd_sc_hvl__a21o_1)
+   0.40   15.81 v _3273_/Dm/_7235_/X (sky130_fd_sc_hvl__a21o_1)
+   0.48   16.29 v _3273_/Dm/_7349_/X (sky130_fd_sc_hvl__o21a_1)
+   0.42   16.71 ^ _3273_/Dm/_7552_/Y (sky130_fd_sc_hvl__o22ai_1)
+   0.38   17.09 v _3273_/Dm/_7734_/Y (sky130_fd_sc_hvl__nand3_1)
+   0.41   17.50 v _3273_/Dm/_7816_/X (sky130_fd_sc_hvl__a21o_1)
+   0.56   18.06 v _3273_/Dm/_7893_/X (sky130_fd_sc_hvl__or2_1)
+   0.41   18.47 v _3273_/Dm/_7963_/X (sky130_fd_sc_hvl__a21o_1)
+   0.43   18.90 ^ _3273_/Dm/_8039_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.34   19.24 v _3273_/Dm/_8145_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.52   19.76 ^ _3273_/Dm/_8189_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.34   20.10 v _3273_/Dm/_8232_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.46   20.56 v _3273_/Dm/_8271_/X (sky130_fd_sc_hvl__a21o_1)
+   0.39   20.95 ^ _3273_/Dm/_8298_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.37   21.32 ^ _3273_/Dm/_8324_/X (sky130_fd_sc_hvl__o21a_1)
+   0.35   21.67 ^ _3273_/Dm/_8341_/X (sky130_fd_sc_hvl__o21a_1)
+   0.12   21.79 v _3273_/Dm/_8343_/Y (sky130_fd_sc_hvl__nor2_1)
+   0.57   22.37 v _3273_/Dm/_8344_/X (sky130_fd_sc_hvl__mux2_1)
+   0.00   22.37 v _3273_/Dm/_9044_/D (sky130_fd_sc_hvl__dfxtp_1)
+          22.37   data arrival time
+
+  40.00   40.00   clock Clock (rise edge)
+   0.00   40.00   clock network delay (ideal)
+   0.00   40.00   clock reconvergence pessimism
+          40.00 ^ _3273_/Dm/_9044_/CLK (sky130_fd_sc_hvl__dfxtp_1)
+  -0.23   39.77   library setup time
+          39.77   data required time
+---------------------------------------------------------
+          39.77   data required time
+         -22.37   data arrival time
+---------------------------------------------------------
+          17.40   slack (MET)
+
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             5.98e-02   6.83e-03   3.61e-03   7.02e-02  46.4%
+Combinational          6.22e-02   1.88e-02   0.00e+00   8.10e-02  53.6%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  1.22e-01   2.56e-02   3.61e-03   1.51e-01 100.0%
+                          80.7%      16.9%       2.4%

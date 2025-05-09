@@ -1,6 +1,5 @@
 .vscode/
 build
-*.vcd
 skywater-pdk
 obj_dir
 *.yv

@@ -1,0 +1,87 @@
+Startpoint: _3269_/div_multiplier_u/_8924_
+            (rising edge-triggered flip-flop clocked by Clock)
+Endpoint: _3269_/div_multiplier_u/_9068_
+          (rising edge-triggered flip-flop clocked by Clock)
+Path Group: Clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock Clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _3269_/div_multiplier_u/_8924_/CLK (sky130_fd_sc_hvl__dfxtp_1)
+   1.85    1.85 v _3269_/div_multiplier_u/_8924_/Q (sky130_fd_sc_hvl__dfxtp_1)
+   0.38    2.23 ^ _3269_/div_multiplier_u/_5455_/Y (sky130_fd_sc_hvl__nand2_1)
+   0.34    2.58 v _3269_/div_multiplier_u/_5458_/X (sky130_fd_sc_hvl__xor2_1)
+   0.53    3.10 v _3269_/div_multiplier_u/_5459_/X (sky130_fd_sc_hvl__and3_1)
+   0.42    3.53 v _3269_/div_multiplier_u/_5539_/X (sky130_fd_sc_hvl__o21a_1)
+   0.63    4.15 v _3269_/div_multiplier_u/_5541_/X (sky130_fd_sc_hvl__or2_1)
+   0.38    4.54 v _3269_/div_multiplier_u/_5550_/X (sky130_fd_sc_hvl__xor2_1)
+   0.33    4.87 v _3269_/div_multiplier_u/_5551_/X (sky130_fd_sc_hvl__o21a_1)
+   0.63    5.49 v _3269_/div_multiplier_u/_5553_/X (sky130_fd_sc_hvl__or2_1)
+   0.38    5.88 v _3269_/div_multiplier_u/_5568_/X (sky130_fd_sc_hvl__xor2_1)
+   0.33    6.21 v _3269_/div_multiplier_u/_5569_/X (sky130_fd_sc_hvl__o21a_1)
+   0.63    6.83 v _3269_/div_multiplier_u/_5571_/X (sky130_fd_sc_hvl__or2_1)
+   0.38    7.22 v _3269_/div_multiplier_u/_5596_/X (sky130_fd_sc_hvl__xor2_1)
+   0.31    7.52 v _3269_/div_multiplier_u/_5597_/X (sky130_fd_sc_hvl__o21a_1)
+   0.62    8.15 v _3269_/div_multiplier_u/_5599_/X (sky130_fd_sc_hvl__or2_1)
+   0.35    8.50 v _3269_/div_multiplier_u/_5604_/X (sky130_fd_sc_hvl__xor2_1)
+   0.77    9.27 v _3269_/div_multiplier_u/_5606_/X (sky130_fd_sc_hvl__or3_1)
+   0.21    9.48 ^ _3269_/div_multiplier_u/_5607_/Y (sky130_fd_sc_hvl__nand2_1)
+   0.31    9.79 v _3269_/div_multiplier_u/_5609_/X (sky130_fd_sc_hvl__xor2_1)
+   0.44   10.23 v _3269_/div_multiplier_u/_5611_/Y (sky130_fd_sc_hvl__xnor2_1)
+   0.40   10.63 ^ _3269_/div_multiplier_u/_5614_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.37   11.00 v _3269_/div_multiplier_u/_5707_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.39   11.39 ^ _3269_/div_multiplier_u/_5806_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.37   11.76 v _3269_/div_multiplier_u/_6012_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.40   12.16 ^ _3269_/div_multiplier_u/_6015_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.37   12.52 v _3269_/div_multiplier_u/_6237_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.40   12.92 ^ _3269_/div_multiplier_u/_6240_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.37   13.29 v _3269_/div_multiplier_u/_6485_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.48   13.77 v _3269_/div_multiplier_u/_6489_/X (sky130_fd_sc_hvl__o21a_1)
+   0.46   14.23 v _3269_/div_multiplier_u/_6622_/X (sky130_fd_sc_hvl__o21a_1)
+   0.85   15.08 v _3269_/div_multiplier_u/_6882_/X (sky130_fd_sc_hvl__or3_1)
+   0.35   15.43 v _3269_/div_multiplier_u/_7126_/X (sky130_fd_sc_hvl__a21o_1)
+   0.28   15.71 ^ _3269_/div_multiplier_u/_7243_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.45   16.16 v _3269_/div_multiplier_u/_7357_/Y (sky130_fd_sc_hvl__a22oi_1)
+   0.46   16.62 ^ _3269_/div_multiplier_u/_7560_/Y (sky130_fd_sc_hvl__o22ai_1)
+   0.39   17.01 v _3269_/div_multiplier_u/_7742_/Y (sky130_fd_sc_hvl__nand3_1)
+   0.41   17.42 v _3269_/div_multiplier_u/_7824_/X (sky130_fd_sc_hvl__a21o_1)
+   0.56   17.98 v _3269_/div_multiplier_u/_7901_/X (sky130_fd_sc_hvl__or2_1)
+   0.41   18.38 v _3269_/div_multiplier_u/_7971_/X (sky130_fd_sc_hvl__a21o_1)
+   0.43   18.81 ^ _3269_/div_multiplier_u/_8047_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.34   19.16 v _3269_/div_multiplier_u/_8153_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.52   19.68 ^ _3269_/div_multiplier_u/_8197_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.34   20.02 v _3269_/div_multiplier_u/_8239_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.46   20.48 v _3269_/div_multiplier_u/_8277_/X (sky130_fd_sc_hvl__a21o_1)
+   0.39   20.86 ^ _3269_/div_multiplier_u/_8306_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.37   21.24 ^ _3269_/div_multiplier_u/_8331_/X (sky130_fd_sc_hvl__o21a_1)
+   0.35   21.59 ^ _3269_/div_multiplier_u/_8350_/X (sky130_fd_sc_hvl__o21a_1)
+   0.12   21.71 v _3269_/div_multiplier_u/_8352_/Y (sky130_fd_sc_hvl__nor2_1)
+   0.57   22.29 v _3269_/div_multiplier_u/_8353_/X (sky130_fd_sc_hvl__mux2_1)
+   0.00   22.29 v _3269_/div_multiplier_u/_9068_/D (sky130_fd_sc_hvl__dfxtp_1)
+          22.29   data arrival time
+
+  40.00   40.00   clock Clock (rise edge)
+   0.00   40.00   clock network delay (ideal)
+   0.00   40.00   clock reconvergence pessimism
+          40.00 ^ _3269_/div_multiplier_u/_9068_/CLK (sky130_fd_sc_hvl__dfxtp_1)
+  -0.23   39.77   library setup time
+          39.77   data required time
+---------------------------------------------------------
+          39.77   data required time
+         -22.29   data arrival time
+---------------------------------------------------------
+          17.48   slack (MET)
+
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             1.27e-02   1.28e-03   7.70e-04   1.48e-02  47.8%
+Combinational          1.27e-02   3.47e-03   0.00e+00   1.61e-02  52.2%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  2.54e-02   4.75e-03   7.70e-04   3.09e-02 100.0%
+                          82.1%      15.4%       2.5%

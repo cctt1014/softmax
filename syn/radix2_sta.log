@@ -1,0 +1,91 @@
+Startpoint: _3279_/_3688_ (rising edge-triggered flip-flop clocked by Clock)
+Endpoint: _3279_/_3690_ (rising edge-triggered flip-flop clocked by Clock)
+Path Group: Clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock Clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _3279_/_3688_/CLK (sky130_fd_sc_hvl__dfxtp_1)
+   0.88    0.88 v _3279_/_3688_/Q (sky130_fd_sc_hvl__dfxtp_1)
+   0.42    1.30 v _3279_/_1792_/Y (sky130_fd_sc_hvl__xnor2_1)
+   0.34    1.64 v _3279_/_1793_/X (sky130_fd_sc_hvl__o21a_1)
+   0.36    2.00 ^ _3279_/_1795_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.22    2.22 v _3279_/_1797_/Y (sky130_fd_sc_hvl__a22oi_1)
+   0.39    2.61 ^ _3279_/_1798_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.40    3.01 ^ _3279_/_1801_/X (sky130_fd_sc_hvl__a21o_1)
+   0.27    3.28 v _3279_/_1803_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.37    3.65 ^ _3279_/_1805_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.21    3.86 v _3279_/_1807_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.36    4.22 ^ _3279_/_1809_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.27    4.49 v _3279_/_1810_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.37    4.85 ^ _3279_/_1812_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.21    5.07 v _3279_/_1814_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.36    5.43 ^ _3279_/_1816_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.27    5.70 v _3279_/_1817_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.29    5.99 ^ _3279_/_1819_/Y (sky130_fd_sc_hvl__o22ai_1)
+   0.27    6.25 v _3279_/_1821_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.31    6.57 ^ _3279_/_1823_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.20    6.77 v _3279_/_1825_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.28    7.05 ^ _3279_/_1827_/Y (sky130_fd_sc_hvl__o22ai_1)
+   0.27    7.32 v _3279_/_1829_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.37    7.69 ^ _3279_/_1831_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.24    7.93 v _3279_/_1832_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.36    8.29 ^ _3279_/_1834_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.21    8.50 v _3279_/_1836_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.36    8.86 ^ _3279_/_1838_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.27    9.13 v _3279_/_1839_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.37    9.50 ^ _3279_/_1841_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.27    9.77 v _3279_/_1842_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.29   10.05 ^ _3279_/_1844_/Y (sky130_fd_sc_hvl__o22ai_1)
+   0.27   10.32 v _3279_/_1846_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.37   10.69 ^ _3279_/_1848_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.24   10.93 v _3279_/_1849_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.36   11.29 ^ _3279_/_1851_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.21   11.50 v _3279_/_1853_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.36   11.87 ^ _3279_/_1855_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.27   12.13 v _3279_/_1856_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.37   12.50 ^ _3279_/_1858_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.27   12.77 v _3279_/_1859_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.31   13.08 ^ _3279_/_1861_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.31   13.39 ^ _3279_/_1862_/X (sky130_fd_sc_hvl__or3_1)
+   0.23   13.62 v _3279_/_1864_/Y (sky130_fd_sc_hvl__a21oi_1)
+   0.36   13.98 ^ _3279_/_1865_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.29   14.27 v _3279_/_1867_/Y (sky130_fd_sc_hvl__nand3_1)
+   0.54   14.81 v _3279_/_1868_/X (sky130_fd_sc_hvl__and3_1)
+   0.35   15.16 ^ _3279_/_1870_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.18   15.34 v _3279_/_1872_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.35   15.70 ^ _3279_/_1874_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.24   15.93 v _3279_/_1875_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.30   16.24 ^ _3279_/_1877_/Y (sky130_fd_sc_hvl__nor3_1)
+   0.40   16.63 v _3279_/_1879_/Y (sky130_fd_sc_hvl__o22ai_1)
+   2.65   19.28 v _3279_/_1880_/X (sky130_fd_sc_hvl__and2_1)
+   1.35   20.63 v _3279_/_2736_/X (sky130_fd_sc_hvl__mux2_1)
+   0.20   20.83 ^ _3279_/_2738_/Y (sky130_fd_sc_hvl__o21ai_1)
+   0.00   20.83 ^ _3279_/_3690_/D (sky130_fd_sc_hvl__dfxtp_1)
+          20.83   data arrival time
+
+  40.00   40.00   clock Clock (rise edge)
+   0.00   40.00   clock network delay (ideal)
+   0.00   40.00   clock reconvergence pessimism
+          40.00 ^ _3279_/_3690_/CLK (sky130_fd_sc_hvl__dfxtp_1)
+  -0.24   39.76   library setup time
+          39.76   data required time
+---------------------------------------------------------
+          39.76   data required time
+         -20.83   data arrival time
+---------------------------------------------------------
+          18.94   slack (MET)
+
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             1.37e-02   8.75e-04   8.35e-04   1.54e-02  57.1%
+Combinational          9.67e-03   1.90e-03   0.00e+00   1.16e-02  42.9%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  2.34e-02   2.78e-03   8.35e-04   2.70e-02 100.0%
+                          86.6%      10.3%       3.1%
